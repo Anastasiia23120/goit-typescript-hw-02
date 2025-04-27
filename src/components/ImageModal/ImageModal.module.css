@@ -4,32 +4,53 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 999;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 4px;
+  position: relative;
+  border-radius: 12px;
   overflow: hidden;
   z-index: 1000;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+  max-width: 90vw;
+  max-height: 90vh;
+  background: transparent;
+  outline: none;
 }
+
 .modalImage {
   display: block;
   max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  object-fit: cover;
+  max-height: 90vh;
+  border-radius: 8px;
+  object-fit: contain;
 }
+
 .closeButton {
   position: absolute;
-  top: 0;
-  right: 0;
-  color: rgb(255, 0, 217);
+  top: 16px;
+  right: 16px;
+  color: white;
   border: none;
   cursor: pointer;
-  background: transparent;
-  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  z-index: 1001;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
 }

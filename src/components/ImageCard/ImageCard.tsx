@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import css from "./ImageCard.module.css";
 import type { ImageCardProps } from "../../types/ImageCard.types";
@@ -10,16 +12,17 @@ const ImageCard: React.FC<ImageCardProps> = ({
   onClick,
 }) => {
   return (
-    <div className={css.imageCard}>
+    <div className={css.imageCard} onClick={onClick}>
       <img
         className={css.imageItem}
-        src={image || "/placeholder.svg"}
-        alt={alt}
-        onClick={onClick}
+        src={image !== null ? image : "/placeholder.svg"}
+        alt={alt ?? "Image"}
       />
       <div className={css.infoContainer}>
-        <p className={css.info}>Likes: {likes}</p>
-        <p className={css.info}>Uploaded by: {userName}</p>
+        <p className={css.userName}>{userName}</p>
+        <p className={css.likes}>
+          <span className={css.heartIcon}>♥</span> {likes}
+        </p>
       </div>
     </div>
   );

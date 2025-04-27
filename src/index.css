@@ -3,13 +3,17 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: #960df1;
-  background: linear-gradient(135deg, #d1396c, #ea8faf);
+  color: #483355;
+  background: linear-gradient(135deg, #ea8faf, #d1396c);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 ul,
@@ -21,13 +25,23 @@ ol {
 
 body {
   margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
 }
 
 p {
   margin: 0;
+}
+
+button {
+  font-family: inherit;
 }

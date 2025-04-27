@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import ImageCard from "../ImageCard/ImageCard";
 import css from "./ImageGallery.module.css";
@@ -6,10 +8,10 @@ import type { UnsplashImage } from "../../types/App.types";
 
 const ImageGallery: React.FC<ImageGalleryProps> = ({ items, onImageClick }) => {
   return (
-    <div>
+    <div className={css.galleryContainer}>
       <ul className={css.galleryList}>
         {items.map((item: UnsplashImage) => (
-          <li key={item.id}>
+          <li key={item.id} className={css.galleryItem}>
             <ImageCard
               image={item.urls.small}
               alt={item.alt_description}

@@ -1,18 +1,29 @@
 .loadMoreButton {
   border-radius: 8px;
   border: none;
-  margin-bottom: 28px;
-  width: 150px;
-  height: 40px;
-  padding: 0.6em 1.2em;
+  margin: 16px 0 40px;
+  width: 200px;
+  height: 48px;
+  padding: 0 24px;
   color: #ffffff;
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   font-family: inherit;
-  background-color: rgb(132, 9, 162);
+  background: linear-gradient(135deg, #d1396c, #ea8faf);
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(226, 12, 223, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .loadMoreButton:hover {
-  background-color: #3c046c;
+  background: linear-gradient(135deg, #96244a, #b36480);
+  box-shadow: 0 6px 15px rgba(226, 12, 223, 0.3);
+  transform: translateY(-2px);
+}
+
+.loadMoreButton:active {
+  transform: translateY(0);
 }

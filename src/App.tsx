@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
@@ -69,30 +71,28 @@ function App() {
   };
 
   return (
-    <>
-      <div>
-        <SearchBar onSearch={onSearch} />
-        {gallery.length > 0 && (
-          <ImageGallery items={gallery} onImageClick={openModal} />
-        )}
-        <ImageModal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          imageUrl={selectedImage ? selectedImage.urls.regular : ""}
-          alt={selectedImage ? selectedImage.alt_description : ""}
+    <div className="app-container">
+      <SearchBar onSearch={onSearch} />
+      {gallery.length > 0 && (
+        <ImageGallery items={gallery} onImageClick={openModal} />
+      )}
+      <ImageModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        imageUrl={selectedImage ? selectedImage.urls.regular : ""}
+        alt={selectedImage ? selectedImage.alt_description : ""}
+      />
+      {loading && <Loader size={60} color="#2dd4bf" speed={1.5} />}
+      {gallery.length > 0 && !loading && page < totalPages && (
+        <LoadMoreBtn onClick={() => setPage((prevPage) => prevPage + 1)} />
+      )}
+      {error && <ErrorMessage message={error} />}
+      {gallery.length === 0 && !error && query && (
+        <ErrorMessage
+          message={`No images found for "${query}". Please try a different search.`}
         />
-        {loading && <Loader size={60} />}
-        {gallery.length > 0 && !loading && page < totalPages && (
-          <LoadMoreBtn onClick={() => setPage((prevPage) => prevPage + 1)} />
-        )}
-        {error && <ErrorMessage message={error} />}
-        {gallery.length === 0 && !error && query && (
-          <ErrorMessage
-            message={`No images found for "${query}". Please try a different search.`}
-          />
-        )}
-      </div>
-    </>
+      )}
+    </div>
   );
 }
 
