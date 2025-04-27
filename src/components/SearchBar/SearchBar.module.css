@@ -1,0 +1,28 @@
+.searchBar {
+  background: linear-gradient(135deg, #ea8faf, #d1396c);
+  padding: 8px 0;
+}
+.inputSearch {
+  border-radius: 4px 0 0 4px;
+  border: none;
+  outline: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+}
+.buttonSearch {
+  border-radius: 0 4px 4px 0;
+  border: none;
+  padding: 0.6em 1.2em;
+  color: #c800ff;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.buttonSearch:hover {
+  color: #2f025c;
+}
